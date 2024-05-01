@@ -1,0 +1,49 @@
+Insertar ARBOL
+lenguaje natural: dada un nodo con un comparable y un dato se da al método del árbol y a partir de la raiz se le pasa a insertar a nivel del nodo
+
+precondiciones:
+    - se debe pasar un nodo por parametro 
+postcondiciones:
+    - se le paso este nodo a nivel de nodo y devuelve el estado de la inserción (booleano)
+
+pseudocodigo:
+
+Insertar(elemento de tipo Elemento)
+COM
+    si es vacio:
+        raiz <= elemento
+        retorna true
+    retornar  raiz.insertar(elemento)
+FIN
+
+Insertar Nodo
+lenguaje natural: dado el nodo pasado por el método del árbol se debe verificar si es menor o mayor al nodo comprado hasta llegar al punto de inserccion deseado, quedando como hoja
+precondiciones:
+    - debe de ser instanciado por el método del árbol
+postcondiciones:
+    - devuelve true en caso de que se inserte correctamente
+    - devuelve false en caso de que el nodo ya exista
+
+pseudocodigo:
+COM
+    si elemento > elemento en el arbol:
+        si hijo izquierdo del elemento en el arbol <> nulo:
+            hijo izquierdo del elemento en el arbol. insertar(elemento)
+        sino:
+            hijo izquierdo del elemento en el arbol <= elemento
+            retornar true
+        
+    si elemento < elemento en el arbol:
+        si hijo derecho del elemento en el arbol <> nulo:
+            hijo derecho del elemento en el arbol. insertar(elemento)
+        sino:
+            hijo derecho del elemento en el arbol <= elemento
+            retornar true
+
+    retornar false
+FIN
+tiempo de ejecución:
+El tiempo de ejecución del algoritmo del arbol depende del algoritmo del nodo,
+. Si el árbol está balanceado, es decir, tiene una altura aproximadamente logarítmica respecto al número de nodos, 
+entonces el tiempo de ejecución será 𝑂(log n), donde n es el número de nodos en el árbol.
+Sin embargo, si el árbol no está balanceado y se degenera en una lista enlazada, la complejidad podría ser O(n), donde n es el número de nodos en el árbol.
